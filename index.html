@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Proyectos de software de Raiki - Arkodes, aplicaciones y herramientas innovadoras en Python y más." />
+  <meta name="theme-color" content="#101010">
+  <title>Arkodes - Imperio Digital</title>
+  <link rel="icon" href="Arkodes.jpg" type="image/jpeg" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #101010;
+      color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    p {
+      margin-bottom: 1rem;
+    }
+    header {
+      background-color: #202020;
+      padding: 1rem;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+    }
+    .container {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .proyecto {
+      border: 1px solid #333;
+      background-color: #181818;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .proyecto h2 {
+      margin-top: 0;
+    }
+    .proyecto {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .proyecto:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+    }
+
+
+
+
+    .btn-descarga {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: #0077cc;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-descarga:focus {
+      outline: 2px solid var(--accent);
+    }
+    .btn-descarga:hover {
+      background-color: #005fa3;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #202020;
+      color: #aaa;
+    }
+    footer a {
+      color: #aaa;
+      text-decoration: none;
+    }
+    footer a:hover {
+      color: #fff;
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 1rem;
+        max-width: 100%;
+      }
+      .proyecto {
+        padding: 1rem;
+      }
+    }
+    textarea {
+      width: 100%;
+      padding: 0.5rem;
+      border-radius: 5px;
+      background: #222;
+      color: #f2f2f2;
+      border: 1px solid #444;
+      resize: vertical;
+      font-family: Arial, sans-serif;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Proyectos • Arkodes</h1>
+</header>
+
+<div class="container">
+
+  <div class="proyecto">
+    <h2>❔ Desconocido</h2>
+    <p><strong>Descripción:</strong> En desarrollo.</p>
+    <p><strong>Tecnologías:</strong> En desarrollo</p>
+    <a href="" class="btn-descarga" download="">⬇️ Descargar</a>
+  </div>
+
+  <div class="proyecto">
+    <h2>❔ Desconocido</h2>
+    <p><strong>Descripción:</strong> En desarrollo.</p>
+    <p><strong>Tecnologías:</strong> En desarrollo</p>
+    <a href="" class="btn-descarga" download="">⬇️ Descargar</a>
+  </div>
+
+  <div class="proyecto">
+    <h2>💬 Comentarios - En desarrollo aun</h2>
+    <form id="comentariosForm">
+      <textarea id="comentarioTexto" rows="4" placeholder="Escribe tu comentario aquí..."></textarea>
+      <button type="submit" class="btn-descarga" style="margin-top:0.5rem;">Enviar</button>
+    </form>
+    <div id="comentariosList" style="margin-top:1rem; max-height:200px; overflow-y:auto; border:1px solid #333; padding:1rem; border-radius:5px; background:#181818;">
+      <!-- Comentarios aparecerán aquí -->
+    </div>
+  </div>
+<a href="https://t.me/ArkodesOficial" target="_blank" class="telegram-float" aria-label="Canal oficial de Arkodes en Telegram">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram">
+  <span>Canal Oficial</span>
+</a>
+
+
+<style>
+  .telegram-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #0088cc;
+    color: white;
+    border-radius: 30px;
+    padding: 8px 14px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+  }
+
+  .telegram-float img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .telegram-float:hover {
+    background-color: #006699;
+  }
+
+  @media (max-width: 500px) {
+    .telegram-float span {
+      display: none; /* Solo ícono en móviles */
+    }
+    .telegram-float {
+      border-radius: 50%;
+      padding: 10px;
+    }
+  }
+</style>
+
+</div>
+
+<script>
+  const form = document.getElementById('comentariosForm');
+  const comentariosList = document.getElementById('comentariosList');
+  const textarea = document.getElementById('comentarioTexto');
+
+  function agregarComentarioAlDOM(texto) {
+    const nuevoComentario = document.createElement('p');
+    nuevoComentario.textContent = texto;
+    nuevoComentario.style.borderBottom = '1px solid #444';
+    nuevoComentario.style.padding = '0.5rem 0';
+    comentariosList.prepend(nuevoComentario);
+  }
+
+  function cargarComentarios() {
+    const comentariosGuardados = JSON.parse(localStorage.getItem('comentariosArkodes')) || [];
+    comentariosList.innerHTML = ''; // Limpiar antes
+    if (comentariosGuardados.length === 0) {
+      comentariosList.innerHTML = '<p style="color:#777; font-style:italic;">Aún no hay comentarios. Sé el primero en escribir.</p>';
+    } else {
+      comentariosGuardados.forEach(texto => agregarComentarioAlDOM(texto));
+    }
+  }
+
+  function guardarComentario(texto) {
+    const comentariosGuardados = JSON.parse(localStorage.getItem('comentariosArkodes')) || [];
+    comentariosGuardados.unshift(texto);
+    localStorage.setItem('comentariosArkodes', JSON.stringify(comentariosGuardados));
+  }
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    let texto = textarea.value.trim();
+    if (texto) {
+      if (texto.length > 500) texto = texto.slice(0, 500) + '...'; // Limitar a 500 caracteres
+      agregarComentarioAlDOM(texto);
+      guardarComentario(texto);
+      textarea.value = '';
+    }
+  });
+
+  window.onload = cargarComentarios;
+
+
+</script>
+
+<footer>
+  Hecho por Innominatus © 2026
+</footer>
+</body>
+</html>
