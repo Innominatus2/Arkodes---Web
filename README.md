@@ -1,2 +1,1 @@
-# Arkodes---Web
-Pagina para mi marca personal Arkodes
+Pagina para mis proyectos personales
